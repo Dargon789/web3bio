@@ -10,8 +10,6 @@ The following table outlines which versions of the project are currently support
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+To report a security vulnerability, please email `security@example.com` with a detailed description of the issue. **Please do not create public GitHub issues for security vulnerabilities.**
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+You can expect an acknowledgment of your report within 48 hours. We appreciate your efforts to disclose your findings responsibly and will work with you to address the issue.
