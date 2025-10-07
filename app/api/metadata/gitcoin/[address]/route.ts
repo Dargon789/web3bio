@@ -53,7 +53,13 @@ function createResponse(score: number, stamps: any[]): StampResponse {
 export async function GET(req: NextRequest): Promise<NextResponse> {
   const address = req.nextUrl.searchParams.get("address");
 
-  if (!address || !isValidEthereumAddress(address)) {
+  // Extra strict validation: only allow lowercase 0x-prefixed 40 hex digits
+  const STRICT_ETH_ADDR_RE = /^0x[a-f0-9]{40}$/;
+  if (
+    !address ||
+    !isValidEthereumAddress(address) ||
+    !STRICT_ETH_ADDR_RE.test("0x" + address.replace(/^0x/i, "").toLowerCase())
+  ) {
     return NextResponse.json(createResponse(0, []));
   }
 
